@@ -317,7 +317,7 @@ def main():
             if return_matrix is not None:
                 save_processed_data(return_matrix, f"{index_name}_return_matrix", 'data/processed/components')
             
-            # Traiter et sauvegarder les données de pondération
+            # Créer et sauvegarder les données de pondération
             weights_df = process_weights_data(index_name, components_data)
             save_processed_data(weights_df, f"{index_name}_weights", 'data/processed/weights')
 
