@@ -1,0 +1,63 @@
+# Configuration par défaut pour le backtest de réplication d'indice
+
+# Paramètres généraux
+general:
+  # Indice à répliquer
+  index: "CAC40"
+  # Capital initial
+  initial_capital: 1000000.0
+  # Date de début (format YYYY-MM-DD, null pour auto-détection)
+  start_date: null
+  # Date de fin (format YYYY-MM-DD, null pour aujourd'hui)
+  end_date: null
+  # Nombre d'années de données à télécharger (si start_date est null)
+  years: 5
+  # Répertoires
+  data_dir: "data/processed"
+  output_dir: "results"
+
+# Paramètres pour le téléchargement des données
+download:
+  # Limiter le nombre de composants (0 = tous)
+  limit_components: 0
+  # Télécharger les composants
+  download_components: true
+
+# Mappage des indices vers les tickers
+index_tickers:
+  "S&P500": "^GSPC"
+  "CAC40": "^FCHI"
+  "EUROSTOXX50": "^STOXX50E"
+
+# Paramètres pour la réplication physique
+physical:
+  # Frais de gestion annuels (en pourcentage)
+  management_fee: 0.0035
+  # Coûts de transaction (en pourcentage)
+  transaction_cost: 0.0020
+  # Fréquence de rebalancement
+  rebalance_frequency: "quarterly"
+
+# Paramètres pour la réplication synthétique
+synthetic:
+  # Frais de gestion annuels (en pourcentage)
+  management_fee: 0.0025
+  # Frais du swap annuels (en pourcentage)
+  swap_fee: 0.0015
+  # Fréquence de reset du swap
+  swap_reset_frequency: "monthly"
+  # Taux sans risque annuel
+  risk_free_rate: 0.02
+
+# Paramètres pour l'analyse comparative
+comparison:
+  # Titre du rapport
+  report_title: "Comparaison des Stratégies de Réplication"
+  # Afficher les graphiques interactivement
+  show_plots: true
+  # Sauvegarder les graphiques
+  save_plots: true
+  # Format des graphiques sauvegardés (png, pdf, svg, etc.)
+  plot_format: "png"
+  # DPI pour les graphiques sauvegardés
+  plot_dpi: 300
