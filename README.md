@@ -37,6 +37,7 @@ Le framework permet de:
 ├── tests/                # Tests unitaires et d'intégration
 ├── .gitignore            # Fichiers à ignorer par Git
 ├── main.py               # Script principal
+├── setup.bat             # Script batch pour créer la structure des dossiers (Windows)
 └── requirements.txt      # Dépendances Python
 ```
 
@@ -66,12 +67,18 @@ pip install -r requirements.txt
 
 4. Créer les dossiers nécessaires:
 
+### Pour Windows (méthode facile):
+```
+setup.bat
+```
+Le fichier batch créera automatiquement toute la structure de dossiers nécessaire.
+
 ### Pour Linux/macOS:
 ```bash
 mkdir -p data/raw/indices data/raw/components data/processed/indices data/processed/components data/processed/weights logs results
 ```
 
-### Pour Windows (CMD):
+### Pour Windows (CMD) - méthode manuelle:
 ```cmd
 mkdir data
 mkdir data\raw
