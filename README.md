@@ -50,8 +50,13 @@ cd index-replication-backtest
 
 2. Créer un environnement virtuel et l'activer:
 ```bash
+# Linux/macOS
 python -m venv venv
-source venv/bin/activate  # Sur Windows: venv\Scripts\activate
+source venv/bin/activate
+
+# Windows
+python -m venv venv
+venv\Scripts\activate
 ```
 
 3. Installer les dépendances:
@@ -60,8 +65,29 @@ pip install -r requirements.txt
 ```
 
 4. Créer les dossiers nécessaires:
+
+### Pour Linux/macOS:
 ```bash
 mkdir -p data/raw/indices data/raw/components data/processed/indices data/processed/components data/processed/weights logs results
+```
+
+### Pour Windows (CMD):
+```cmd
+mkdir data
+mkdir data\raw
+mkdir data\raw\indices
+mkdir data\raw\components
+mkdir data\processed
+mkdir data\processed\indices
+mkdir data\processed\components
+mkdir data\processed\weights
+mkdir logs
+mkdir results
+```
+
+### Pour Windows (PowerShell):
+```powershell
+New-Item -Path "data\raw\indices","data\raw\components","data\processed\indices","data\processed\components","data\processed\weights","logs","results" -ItemType Directory -Force
 ```
 
 ## Utilisation
@@ -134,6 +160,16 @@ Pour exécuter les tests unitaires:
 ```bash
 python -m unittest discover tests
 ```
+
+## Déploiement sur GitHub Pages
+
+Vous pouvez utiliser GitHub Pages pour présenter les résultats de vos analyses:
+
+1. Créez un dossier `docs` à la racine du projet
+2. Générez des rapports HTML et des visualisations dans ce dossier
+3. Activez GitHub Pages dans les paramètres du dépôt en choisissant le dossier `/docs`
+
+Votre site sera disponible à l'adresse: `https://username.github.io/index-replication-backtest/`
 
 ## Licence
 
