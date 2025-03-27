@@ -6,10 +6,14 @@ Script principal pour exécuter les différentes tâches du projet de réplicati
 """
 
 import os
+import sys
 import argparse
 import logging
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
+
+# Ajouter le répertoire courant au chemin de recherche Python
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
 # Configuration du logging
 logging.basicConfig(
